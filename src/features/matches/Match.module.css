@@ -1,0 +1,25 @@
+.Match {
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    font-size: 8pt; color: white;
+    max-width: 350px; max-height: 200px;
+}
+.area {
+    width: 100px;
+}
+.flag {
+     width: 75px;
+     border: 5px red;
+}
+
+.score {
+    border: solid 1px grey;
+    display: grid;
+    grid-auto-flow: revert;
+    gap: 5px;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.score div div:first-of-type {font-weight: bold;}

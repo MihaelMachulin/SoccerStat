@@ -1,0 +1,9 @@
+.CompetitionsList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    justify-content: space-around;
+    align-self: flex-end;
+
+}

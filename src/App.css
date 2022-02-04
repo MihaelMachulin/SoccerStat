@@ -1,0 +1,29 @@
+body { background-color: black}
+
+.App {
+  text-align: center;
+}
+
+a {
+  color: #61dafb;
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+}
+
+.Pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 32px;
+  border-radius: 50px;
+  padding: 30px;
+  background: #282c34;
+  box-shadow: 20px 20px 60px #20242a, -20px -20px 60px #30343e;
+}
+
+.Pokemon {
+  height: calc(10px + 10vmin);
+}

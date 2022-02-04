@@ -1,0 +1,12 @@
+.CompetitionCard {
+    align-self: stretch;
+    border-radius: 50px;
+    padding: 1em;
+    background: radial-gradient(circle, rgba(8,23,71,1) 18%, rgba(2,0,36,0) 100%);
+}
+
+.CompetitionCard .Emblem {
+    height: 100px;
+    background-color: white;
+
+}
