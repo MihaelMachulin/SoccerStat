@@ -11,6 +11,7 @@ export default function () {
       && data.areas.some   (area2 => area2.parentAreaId === area.id) )
        : []
   const dispatch = useDispatch()
+  console.log(data)
 
   function areaHandler(macroRegionId) {
     const areasList = data ? data.areas.filter(area => area.parentAreaId === macroRegionId) : []

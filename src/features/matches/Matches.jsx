@@ -9,12 +9,16 @@ function Matches() {
   const { data2 = [] } = useGetTeamByIdQuery();
 
   return (
-      <div className="Pokemons">
-        {
-          !isLoading ? data.map((match, idx)=> <Match data={match} idx={idx}/>) : <>Loading...</>
-        }
-      </div>
-
+    <>
+      <h3>Select 10 days period</h3>
+        <div className="Pokemons">
+          {
+            !isLoading ?
+              data.map((match, idx)=> <Match data={match} idx={idx}/>)
+              : <>Loading...</>
+          }
+        </div>
+    </>
   );
 }
 

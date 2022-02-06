@@ -3,23 +3,33 @@
     display: grid;
     grid-template-columns: 1fr 3fr;
     font-size: 8pt; color: white;
-    max-width: 350px; max-height: 200px;
+    max-width: 400px; max-height: 200px;
 }
 .area {
     width: 100px;
+    padding-top: 3px;
 }
 .flag {
      width: 75px;
      border: 5px red;
 }
 
+.MatchDate {
+    border: solid 1px grey;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
 .score {
     border: solid 1px grey;
     display: grid;
     grid-auto-flow: revert;
-    gap: 5px;
+    gap: 0;
     grid-auto-columns: auto;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    font-size: 10pt;
 }
-.score div div:first-of-type {font-weight: bold;}
+.score div:first-of-type{
+    font-weight: bold;
+}

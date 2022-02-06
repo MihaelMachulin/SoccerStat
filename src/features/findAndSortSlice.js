@@ -7,14 +7,21 @@ const findAndSortSlice = createSlice({
     filterByDate: (state, action) => {
       state.dateFrom = action.payload.dateFrom
       state.dateTo = action.payload.dateTo
+      state.datesInterval = action.payload.datesIntervalInApiFormat
+    },
+    clearDatesInterval: (state, action) => {
+      delete state.datesInterval
     },
     storeAreaList: (state, action) => {
       state.areasList = action.payload
+    },
+    storeCompetition: (state, action) => {
+      state.currentCompetition = action.payload
     }
   }
 })
 
-export const { filterByDate, storeAreaList } = findAndSortSlice.actions
+export const { filterByDate, storeAreaList, storeCompetition, clearDatesInterval } = findAndSortSlice.actions
 export default findAndSortSlice.reducer
 
 

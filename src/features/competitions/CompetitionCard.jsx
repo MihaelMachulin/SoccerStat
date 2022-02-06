@@ -1,15 +1,20 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { storeCompetition } from '../findAndSortSlice'
 import AreaFlag from '../shared/AreaFlag'
 import classes from './CompetitionCard.module.css'
-import { useNavigate } from 'react-router-dom'
 
 export default function ({data}) {
   const navigate = useNavigate();
-  const competitionId = data.id
-  console.log(competitionId)
+  const dispatch = useDispatch()
+  function matchesHandler (event) {
+    navigate('/competitions/' + data.id)
+    dispatch(storeCompetition(data))
+  }
   return (
     <div className={classes.CompetitionCard}
-         onClick={() => navigate('/competitions/' + data.id)}
+         onClick={(event) => matchesHandler(event)}
     >
       <h5>{data.name}</h5>
       <img src={data.emblemUrl} className={classes.Emblem}/>
