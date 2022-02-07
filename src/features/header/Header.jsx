@@ -1,5 +1,6 @@
 import React from 'react'
-import FilterViaDate from '../shared/FilterViaDate'
+import FilterByDate   from '../shared/FilterByDateRange'
+import FilterByString from '../shared/FilterByString'
 import { Route, Routes, NavLink } from 'react-router-dom'
 import classes from './Header.module.css'
 
@@ -11,13 +12,17 @@ export default function () {
         <NavLink to='/matches'>Matches by period...</NavLink>
         <NavLink to='/areas'>Teams by area...</NavLink>
         <NavLink to='/competitions'>Competitions....</NavLink>
-        <NavLink to='/matches'>Link4...</NavLink>
       </div>
       <div className={classes.functional}>
         <Routes>
-          <Route path="/matches" exact element={<FilterViaDate oneTapOn={1}/>}/>
-          <Route path="/competitions/:compid" element={<FilterViaDate />}/>
-          <Route path="/team-matches/:teamid" element={<FilterViaDate />}/>
+          <Route path="/" exact element={<FilterByDate oneTapOn={1} title={'Select 10 days range'}/>}/>
+          <Route path="/matches" exact element={<FilterByDate oneTapOn={1} title={'Select 10 days range'}/>}/>
+          <Route path="/competitions/:compid" element={<FilterByDate />}/>
+          <Route path="/team-matches/:teamid" element={<FilterByDate />}/>
+        </Routes>
+        <Routes>
+          <Route path="/matches" exact element={<FilterByString title={'Enter team name:'}/>}/>
+          <Route path="/areas/:areaid" element={<FilterByString title={'Enter team name:'}/>}/>
         </Routes>
       </div>
 

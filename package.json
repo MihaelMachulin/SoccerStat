@@ -1,12 +1,17 @@
 {
+  "homepage": "https://mihaelmachulin.github.io/SoccerStat",
   "version": "0.0.0",
   "scripts": {
+    "predeploy": "vite build",
+    "deploy": "gh-pages -b master -d dist",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
+    "dotenv": "^16.0.0",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-redux": "^7.2.4",

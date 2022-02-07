@@ -1,7 +1,7 @@
 import React from "react";
 import Match from "./Match";
 import { useSelector } from 'react-redux'
-import { useGetMatchesByTeamIdQuery } from '../pokemonSlice'
+import { useGetMatchesByTeamIdQuery } from '../mainQuerySlice'
 import { useParams} from 'react-router-dom'
 // TODO этот компонент - идентичен CompetitionMatches.jsx - объединить
 function Matches() {
@@ -16,7 +16,7 @@ function Matches() {
   return (
     <>
       <h1>Matches of selected team</h1><br/> {/*TODO Вывести название команды*/}
-      <div className="Pokemons">
+      <div className="Content">
           {
             data
               ? matches.map((match, idx) => (

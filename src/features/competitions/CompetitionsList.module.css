@@ -1,9 +1,24 @@
 .CompetitionsList {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: space-evenly;
+}
 
-    justify-content: space-around;
-    align-self: flex-end;
+.CompetitionCard {
+    display: grid;
+    grid-template-columns: 110px auto 110px;
+    grid-template-rows: 65px;
+    align-self: stretch;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 50px;
+    margin: 0.5em;
+    background: radial-gradient(circle, rgba(8,23,71,1) 18%, rgba(2,0,36,0) 100%);
+}
+
+.CompetitionCard .Emblem {
+    height: 50px;
+    background-color: white;
 
 }

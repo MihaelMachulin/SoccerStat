@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const pokemonApi = createApi({
-  reducerPath: "pokemonApi",
+export const SoccerApi = createApi({
+  reducerPath: "SoccerApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://api.football-data.org/v2/",
+    baseUrl: "https://api.football-data.org/v2/",
     prepareHeaders: headers => {
-      headers.set('X-Auth-Token', 'c512bd1adb1947e987dbeff47924c56e')
+      headers.set('X-Auth-Token', 'c512bd1adb1947e987dbeff47924c56e' )
       return headers
     }
   }),
@@ -52,5 +52,5 @@ export const { useGetAreaByIdQuery,
                useGetTeamByIdQuery,
                useGetTeamsByAreaQuery,
                useGetCompetitionsQuery,
-               useGetMatchesByTeamIdQuery} = pokemonApi;
+               useGetMatchesByTeamIdQuery} = SoccerApi;
 

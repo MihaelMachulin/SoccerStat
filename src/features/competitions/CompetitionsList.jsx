@@ -1,5 +1,5 @@
 import React from 'react'
-import {useGetCompetitionsQuery} from '../pokemonSlice'
+import {useGetCompetitionsQuery} from '../mainQuerySlice'
 import CompetitionCard from './CompetitionCard'
 import classes from './CompetitionsList.module.css'
 

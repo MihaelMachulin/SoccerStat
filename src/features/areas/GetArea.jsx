@@ -1,5 +1,5 @@
 import React from "react";
-import { useGetAreaByIdQuery } from '../pokemonSlice'
+import { useGetAreaByIdQuery } from '../mainQuerySlice'
 import AreaFlag from '../shared/AreaFlag'
 
 export default function ({areaId}) {

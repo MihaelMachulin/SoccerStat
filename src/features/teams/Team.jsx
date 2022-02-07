@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from 'react-router-dom'
-import { useGetTeamByIdQuery } from '../pokemonSlice'
+import { useGetTeamByIdQuery } from '../mainQuerySlice'
 import {useParams} from 'react-router-dom'
 import GetArea from '../areas/GetArea'
 import classes from './Team.module.css'
@@ -15,7 +15,7 @@ function Team (props) {
     <NavLink to={`/team-matches/${data.id}`} className={classes.TeamRow}>
       <figure>
         <a href={data.website}>
-          <img src={data.crestUrl} alt={data.name} height={'100px'}/>
+          {data.crestUrl && <img src={data.crestUrl} alt={data.name} />}
           <figcaption>{data.shortName}</figcaption>
         </a>
       </figure>

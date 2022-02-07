@@ -1,8 +1,9 @@
 import React from "react";
-import { useGetAreaByIdQuery } from '../pokemonSlice'
+import { useGetAreaByIdQuery } from '../mainQuerySlice'
 import { storeAreaList } from '../findAndSortSlice'
 import { useDispatch} from 'react-redux'
 import AreasList from './AreasList'
+import classes from './Areas.module.css'
 
 export default function () {
   const {data} = useGetAreaByIdQuery()
@@ -20,11 +21,15 @@ export default function () {
   return (
     data ?
       <div>
-        {macroRegions.map(area =>
-          <div onClick={() => areaHandler(area.id)}>
-            {area.name}
-          </div>
-        )}
+        <div className={classes.MacroRegions}>
+          {macroRegions.map(area =>
+            <div onClick={() => areaHandler(area.id)}
+                 className={classes.MacroRegion}
+            >
+              {area.name}
+            </div>
+          )}
+        </div>
         <AreasList />
       </div>
       : <>Loading...</>

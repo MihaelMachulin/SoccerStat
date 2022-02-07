@@ -1,24 +1,15 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {filterByDate, clearDatesInterval} from '../findAndSortSlice'
 import * as dateFns from 'date-fns'
 import { DateRangePicker } from 'rsuite';
 import 'rsuite/dist/rsuite.min.css';
 
 
-export default function ({oneTapOn}) {
+export default function ({oneTapOn, title}) {
   const dispatch = useDispatch()
   let dateFrom = ''
   let dateTo = ''
-
-  const {
-    allowedMaxDays,
-    allowedDays,
-    allowedRange,
-    beforeToday,
-    afterToday,
-    combine,
-  } = DateRangePicker;
 
   const handleRefetch = (event) => {
     if (event) {
@@ -37,6 +28,7 @@ export default function ({oneTapOn}) {
 
   return (
     <div>
+      <h5>{title}</h5>
       {
       oneTapOn === 1 ?
       <DateRangePicker className={'rs-theme-dark'}

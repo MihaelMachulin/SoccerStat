@@ -1,5 +1,5 @@
 import React from 'react'
-import {useGetCompetitionsQuery} from '../pokemonSlice'
+import {useGetCompetitionsQuery} from '../mainQuerySlice'
 import { useSelector } from 'react-redux'
 import {useParams} from 'react-router-dom'
 import Match from '../matches/Match'
@@ -15,7 +15,7 @@ export default function () {
   return (
     <>
       <h1>Matches in this competition</h1><br/>
-       <div className="Pokemons">
+       <div className="Content">
          {
            data
              ? matches.map((match, idx) => (

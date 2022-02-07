@@ -11,6 +11,7 @@
     min-height: 100px;
     font-size: calc(10px + 1vmin);
     color: white;
+    padding: 0 1px 5px 10px;
 }
 
 .AppHeader a {
@@ -21,7 +22,6 @@
     grid-area: mnu;
     display: flex;
     flex-direction: column;
-    padding-left: 15pt;
     text-align: left;
 }
 

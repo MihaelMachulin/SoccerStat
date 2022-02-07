@@ -1,22 +1,39 @@
 import React from 'react'
-import { useGetTeamsByAreaQuery } from '../pokemonSlice'
-import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
+import { useSelector} from 'react-redux'
+import { Link, useParams } from 'react-router-dom'
 import Team from '../teams/Team'
+import { useGetTeamsByAreaQuery } from '../mainQuerySlice'
+import classes from './Team.module.css'
 
 function Teams (){
-  let {id} = useParams()
-  const { data } = useGetTeamsByAreaQuery(id)
-  const chooseAnother = (<Link to={'/areas'}>
-                            Choose another...
-                         </Link>)
-  data && console.log(data)
+  const {areaid} = useParams()
+  const { data } = useGetTeamsByAreaQuery(areaid)
+  const searchString = useSelector((state) => state.findAndSortSlice.searchString)
+  let teams
+  if(data) {
+    teams = data.teams
+    if(searchString && searchString.length > 0) {
+      teams = teams.filter((team) =>
+        team.name.toLowerCase()
+          .includes(searchString.toLowerCase()))
+    }
+  }
+
+  function mapTeams (rawTeams) {
+    return rawTeams.map((team, idx) => (
+      <Team data={team} key={'team' + idx}/>
+    ))}
+
+  const chooseAnother = (
+    <Link to={'/areas'}> Choose another... </Link>
+  )
+
   return (
-   <div>
+   <div className={classes.Teams}>
      <h3>Team list</h3>
        {
-         data ?
-           data.count === 0 ?
+         teams ?
+           teams.count === 0 ?
              <h5>
                <p>No teams in this area.</p>
                      {chooseAnother}
@@ -24,7 +41,7 @@ function Teams (){
              :
              <>
                <h5>{chooseAnother}</h5>
-               {data.teams.map(team => <Team data={team}/>)}
+                     {mapTeams(teams)}
              </>
            : <>Loading...</>
        }

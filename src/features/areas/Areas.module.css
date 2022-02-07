@@ -1,0 +1,15 @@
+.MacroRegions {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: bold; font-size: x-large;
+}
+
+.Areas {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 0;
+    justify-items: start;
+    font-weight: bold;
+}

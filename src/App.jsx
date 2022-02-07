@@ -19,10 +19,11 @@ export default function App() {
     <div className="App">
       <Header />
       <Routes>
+        <Route path="/" exact element={<Matches />}/>
         <Route path="/matches" exact element={<Matches />}/>
         <Route path="/team-matches/:teamid" exact element={<TeamMatches />}/>
         <Route path="/areas" exact element={<Areas />}/>
-        <Route path="/areas/:id" exact element={<Teams />}/>
+        <Route path="/areas/:areaid" exact element={<Teams />}/>
         <Route path="/team/:id" exact element={<Team />}/>
         <Route path="/competitions/" element={<Competitions/>}/>
         <Route path="/competitions/:compid" element={<><Competitions/><CompetitionMatches /></>}/>
