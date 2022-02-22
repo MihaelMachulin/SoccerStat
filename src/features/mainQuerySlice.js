@@ -6,7 +6,7 @@ export const SoccerApi = createApi({
     baseUrl: "https://api.football-data.org/v2/",
     prepareHeaders: headers => {
       // headers.set('X-Auth-Token', 'c512bd1adb1947e987dbeff47924c56e' )
-      headers.set('X-Auth-Token', 'process.env.VITE_APP_KEY' )
+      headers.set('X-Auth-Token', 'import.meta.env.VITE_APP_KEY' )
       return headers
     }
   }),
