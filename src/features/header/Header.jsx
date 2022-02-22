@@ -9,7 +9,7 @@ export default function () {
     <div className={classes.AppHeader}>
       <p className={classes.tittle}>Welcome to Football Leagues Statistics!</p>
       <div className={classes.menu}>
-        <NavLink to='/matches'>22222Matches by period...</NavLink>
+        <NavLink to='/matches'>3333Matches by period...</NavLink>
         <NavLink to='/areas'>Teams by area...</NavLink>
         <NavLink to='/competitions'>Competitions....</NavLink>
       </div>
