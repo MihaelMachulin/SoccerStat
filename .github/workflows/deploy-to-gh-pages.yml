@@ -11,9 +11,8 @@ jobs:
       - name: Create env file
         run: |
           touch .env
-          echo API_ENDPOINT="https://xxx.execute-api.us-west-2.amazonaws.com" >> .env
+          echo API_ENDPOINT=333 >> .env
           echo VITE_APP_KEY=${{ secrets.VITE_APP_KEY }} >> .env
-          echo FIREBASE_SERVICE_ACCOUNT_SOCCERSTAT_78C92=${{ secrets.FIREBASE_SERVICE_ACCOUNT_SOCCERSTAT_78C92 }} >> .env
           cat .env
 
   build-and-deploy:
@@ -34,3 +33,8 @@ jobs:
         with:
           branch: master
           folder: dist
+
+      - name: Remove File
+        uses: JesseTG/rm@v1.0.2
+        with:
+          path: .env
