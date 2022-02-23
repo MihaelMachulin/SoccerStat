@@ -37,4 +37,4 @@ jobs:
       - name: Remove File
         uses: JesseTG/rm@v1.0.2
         with:
-          path: .env
+          path: /.env
