@@ -5,8 +5,16 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 export default defineConfig(({ command, mode }) => {
   console.log(command)
   if (command === 'serve') {
-    return {plugins: [reactRefresh()]}
+    return {
+      plugins: [reactRefresh()],
+      origin: 'http://127.0.0.1:8080/'
+    }
   } else  {
-    return {base: '/SoccerStat/'}
+    return {
+      base: '/SoccerStat/',
+      define: {
+        'import.meta.env': import.meta.env
+      }
+    }
   }
 })
