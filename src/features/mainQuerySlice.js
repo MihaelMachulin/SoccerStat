@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const API_KEY = import.meta.env.VITE_KEY
+const API_KEY = import.meta.env.VITE_APP_KEY
 console.log(API_KEY)
 export const SoccerApi = createApi({
   reducerPath: "SoccerApi",
@@ -7,7 +7,7 @@ export const SoccerApi = createApi({
     baseUrl: "https://api.football-data.org/v2/",
     prepareHeaders: headers => {
       // headers.set('X-Auth-Token', 'c512bd1adb1947e987dbeff47924c56e' )
-      headers.set('X-Auth-Token', import.meta.env.VITE_KEY )
+      headers.set('X-Auth-Token', import.meta.env.VITE_APP_KEY )
       return headers
     }
   }),
