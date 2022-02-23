@@ -1,7 +1,7 @@
 /.idea/*
 notes.md
 # dotenv environment variables file
-# .env
+.env
 
 # Logs
 logs
