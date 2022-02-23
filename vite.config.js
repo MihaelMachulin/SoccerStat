@@ -6,8 +6,7 @@ export default defineConfig(({ command, mode }) => {
   console.log(command)
   if (command === 'serve') {
     return {
-      plugins: [reactRefresh()],
-      origin: 'http://127.0.0.1:8080/'
+      plugins: [reactRefresh()]
     }
   } else  {
     return {
