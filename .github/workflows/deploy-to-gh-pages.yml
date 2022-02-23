@@ -14,8 +14,8 @@ jobs:
         run: |
           npm install
           npm run-script build -- --base='/SoccerStat/'
-        env:
-          VITE_APP_KEY: ${{ secrets.VITE_APP_KEY }}
+#        env:
+#          VITE_APP_KEY: ${{ secrets.VITE_APP_KEY }}
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.2.5
