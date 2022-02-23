@@ -2,8 +2,11 @@ import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [reactRefresh()],
-  base: '/SoccerStat/',
-  define: { "process.env": "process.en" }
+export default defineConfig(({ command, mode }) => {
+  console.log(command)
+  if (command === 'serve') {
+    return {plugins: [reactRefresh()]}
+  } else  {
+    return {base: '/SoccerStat/'}
+  }
 })
