@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const API_KEY = import.meta.env.VITE_APP_KEY
-console.log(API_KEY)
+
 export const SoccerApi = createApi({
   reducerPath: "SoccerApi",
   baseQuery: fetchBaseQuery({
